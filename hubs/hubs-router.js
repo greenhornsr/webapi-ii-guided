@@ -48,7 +48,15 @@ try {
 }
 });
 
-router.post('/', async (req, res) => {
+function validateBody(req, res, next) {
+    if(req.body && req.body.name) {
+        next();
+    }else{
+        res.status(400).json({ message: 'Must provide a hobbit name!'})   
+    }
+}
+
+router.post('/', validateBody, async (req, res) => {
 try {
     const hub = await Hubs.add(req.body);
     res.status(201).json(hub);
