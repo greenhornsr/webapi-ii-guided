@@ -2,7 +2,7 @@
   "name": "webapi-ii-guided-project",
   "version": "1.0.0",
   "description": "Guided project for **Web API II** Module",
-  "main": "index.js",
+  "main": "practice.js",
   "scripts": {
     "server": "nodemon index.js"
   },
